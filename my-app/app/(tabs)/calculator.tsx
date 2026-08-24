@@ -24,10 +24,10 @@ const Calc = () => {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        gap: 15,
+        gap: 10,
       }}
     >
-      <Text style={styles.title}>Enter two numbers, please!</Text>
+      <Text style={styles.title}>⭐️ Enter two numbers, please! ⭐️</Text>
       <TextInput
         style={styles.input}
         placeholder="First number"
@@ -71,20 +71,22 @@ const styles = StyleSheet.create({
   },
   buttonRow: {
     flexDirection: "row",
-    justifyContent: "space-around",
-    marginVertical: 20,
+    justifyContent: "center",
+    marginVertical: 10,
+    gap: 20,
   },
   button: {
-    backgroundColor: "007AFF",
-    paddingVertical: 12,
-    paddingHorizontal: 30,
-    borderRadius: 8,
+    backgroundColor: "lightyellow",
+    paddingVertical: 5,
+    paddingHorizontal: 20,
+    borderRadius: 12,
   },
   buttonText: {
     color: "black",
     fontSize: 24,
     textAlign: "center",
-    marginTop: 20,
+    marginTop: 10,
+    marginBottom: 10,
   },
   result: {
     fontSize: 24,
@@ -92,7 +94,7 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
   title: {
-    fontSize: 25,
+    fontSize: 20,
     fontWeight: "bold",
     textAlign: "center",
     marginBottom: 30,
