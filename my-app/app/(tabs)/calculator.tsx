@@ -51,7 +51,7 @@ const Calc = () => {
           <Text style={styles.buttonText}>+</Text>
         </Pressable>
 
-        <Pressable style={styles.button} onPress={addNumbers}>
+        <Pressable style={styles.button} onPress={subtractNumbers}>
           <Text style={styles.buttonText}>-</Text>
         </Pressable>
       </View>
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     width: 160,
     borderColor: "black",
     borderWidth: 1,
-    color: "black", 
+    color: "black",
   },
   buttonRow: {
     flexDirection: "row",
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
   result: {
     fontSize: 24,
     textAlign: "center",
-    marginTop: 20,
+    marginTop: 2,
   },
   title: {
     fontSize: 25,
