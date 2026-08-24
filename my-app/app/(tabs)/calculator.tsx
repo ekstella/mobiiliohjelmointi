@@ -31,6 +31,7 @@ const Calc = () => {
       <TextInput
         style={styles.input}
         placeholder="First number"
+        placeholderTextColor="black"
         keyboardType="numeric"
         value={number1}
         onChangeText={setNumber1}
@@ -39,6 +40,7 @@ const Calc = () => {
       <TextInput
         style={styles.input}
         placeholder="Second number"
+        placeholderTextColor="black"
         keyboardType="numeric"
         value={number2}
         onChangeText={setNumber2}
@@ -65,7 +67,7 @@ const styles = StyleSheet.create({
     width: 160,
     borderColor: "black",
     borderWidth: 1,
-    color: "black",
+    color: "black", 
   },
   buttonRow: {
     flexDirection: "row",
