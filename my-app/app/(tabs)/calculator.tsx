@@ -27,7 +27,7 @@ const Calc = () => {
         gap: 15,
       }}
     >
-      <Text>Enter two numbers, please!</Text>
+      <Text style={styles.title}>Enter two numbers, please!</Text>
       <TextInput
         style={styles.input}
         placeholder="First number"
@@ -44,11 +44,17 @@ const Calc = () => {
         onChangeText={setNumber2}
       />
 
-      <View style={{}}>
-        <Pressable onPress={addNumbers}>
-          <Text>+</Text>
+      <View style={styles.buttonRow}>
+        <Pressable style={styles.button} onPress={addNumbers}>
+          <Text style={styles.buttonText}>+</Text>
+        </Pressable>
+
+        <Pressable style={styles.button} onPress={addNumbers}>
+          <Text style={styles.buttonText}>-</Text>
         </Pressable>
       </View>
+
+      <Text style={styles.result}>Result: {result}</Text>
     </View>
   );
 };
@@ -59,6 +65,7 @@ const styles = StyleSheet.create({
     width: 160,
     borderColor: "black",
     borderWidth: 1,
+    color: "black",
   },
   buttonRow: {
     flexDirection: "row",
@@ -72,10 +79,21 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   buttonText: {
-    color: "white",
+    color: "black",
     fontSize: 24,
     textAlign: "center",
     marginTop: 20,
+  },
+  result: {
+    fontSize: 24,
+    textAlign: "center",
+    marginTop: 20,
+  },
+  title: {
+    fontSize: 25,
+    fontWeight: "bold",
+    textAlign: "center",
+    marginBottom: 30,
   },
 });
 
