@@ -60,6 +60,23 @@ const styles = StyleSheet.create({
     borderColor: "black",
     borderWidth: 1,
   },
+  buttonRow: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    marginVertical: 20,
+  },
+  button: {
+    backgroundColor: "007AFF",
+    paddingVertical: 12,
+    paddingHorizontal: 30,
+    borderRadius: 8,
+  },
+  buttonText: {
+    color: "white",
+    fontSize: 24,
+    textAlign: "center",
+    marginTop: 20,
+  },
 });
 
 export default Calc;
