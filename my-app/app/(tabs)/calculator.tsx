@@ -17,16 +17,7 @@ const Calc = () => {
   };
 
   return (
-    <View
-      style={{
-        backgroundColor: "pink",
-        borderWidth: 5,
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        gap: 10,
-      }}
-    >
+    <View style={styles.container}>
       <Text style={styles.title}>⭐️ Enter two numbers, please! ⭐️</Text>
       <TextInput
         style={styles.input}
@@ -68,6 +59,7 @@ const styles = StyleSheet.create({
     borderColor: "black",
     borderWidth: 1,
     color: "black",
+    textAlign: "center",
   },
   buttonRow: {
     flexDirection: "row",
@@ -98,6 +90,14 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     marginBottom: 30,
+  },
+  container: {
+    backgroundColor: "pink",
+    borderWidth: 5,
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 10,
   },
 });
 
