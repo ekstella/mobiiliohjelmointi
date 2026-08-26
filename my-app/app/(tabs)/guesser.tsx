@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import {
-    Keyboard,
+  Keyboard,
   StyleSheet,
   Text,
   TextInput,
@@ -8,15 +8,13 @@ import {
   View,
 } from "react-native";
 
-const Guess = () => {
-  const [number, setNumber] = useState("");
-};
-
 export default function GuesserScreen() {
+  const [guess, setGuess] = useState(0);
+
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.container}>
-        <Text style={styles.title}>Guess a number between 1 and 100</Text>
+        <Text style={styles.title}>💗 Guess a number between 1 and 100 💗</Text>
         <TextInput
           style={styles.input}
           placeholder="Make a guess :)"
@@ -39,7 +37,7 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: "bold",
   },
 
@@ -52,5 +50,24 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     color: "black",
     textAlign: "center",
+  },
+  buttonRow: {
+    flexDirection: "row",
+    justifyContent: "center",
+    marginVertical: 10,
+    gap: 20,
+  },
+  button: {
+    backgroundColor: "lightyellow",
+    paddingVertical: 5,
+    paddingHorizontal: 20,
+    borderRadius: 12,
+  },
+  buttonText: {
+    color: "black",
+    fontSize: 24,
+    textAlign: "center",
+    marginTop: 10,
+    marginBottom: 10,
   },
 });
