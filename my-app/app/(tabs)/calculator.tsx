@@ -1,4 +1,12 @@
-import { Pressable, Text, TextInput, View, StyleSheet } from "react-native";
+import {
+  Pressable,
+  Text,
+  TextInput,
+  View,
+  StyleSheet,
+  TouchableWithoutFeedback,
+  Keyboard,
+} from "react-native";
 import { useState } from "react";
 
 const Calc = () => {
@@ -17,38 +25,40 @@ const Calc = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>⭐️ Enter two numbers, please! ⭐️</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="First number"
-        placeholderTextColor="black"
-        keyboardType="numeric"
-        value={number1}
-        onChangeText={setNumber1}
-      />
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <View style={styles.container}>
+        <Text style={styles.title}>⭐️ Enter two numbers, please! ⭐️</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="First number"
+          placeholderTextColor="black"
+          keyboardType="numeric"
+          value={number1}
+          onChangeText={setNumber1}
+        />
 
-      <TextInput
-        style={styles.input}
-        placeholder="Second number"
-        placeholderTextColor="black"
-        keyboardType="numeric"
-        value={number2}
-        onChangeText={setNumber2}
-      />
+        <TextInput
+          style={styles.input}
+          placeholder="Second number"
+          placeholderTextColor="black"
+          keyboardType="numeric"
+          value={number2}
+          onChangeText={setNumber2}
+        />
 
-      <View style={styles.buttonRow}>
-        <Pressable style={styles.button} onPress={addNumbers}>
-          <Text style={styles.buttonText}>+</Text>
-        </Pressable>
+        <View style={styles.buttonRow}>
+          <Pressable style={styles.button} onPress={addNumbers}>
+            <Text style={styles.buttonText}>+</Text>
+          </Pressable>
 
-        <Pressable style={styles.button} onPress={subtractNumbers}>
-          <Text style={styles.buttonText}>-</Text>
-        </Pressable>
+          <Pressable style={styles.button} onPress={subtractNumbers}>
+            <Text style={styles.buttonText}>-</Text>
+          </Pressable>
+        </View>
+
+        <Text style={styles.result}>Result: {result}</Text>
       </View>
-
-      <Text style={styles.result}>Result: {result}</Text>
-    </View>
+    </TouchableWithoutFeedback>
   );
 };
 
