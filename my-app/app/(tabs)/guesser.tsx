@@ -50,7 +50,7 @@ export default function GuesserScreen() {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.container}>
-        <Text style={styles.title}>💗 Guessing game!!! 💗</Text>
+        <Text style={styles.title}>⊹ ࣪ ˖ Guessing game!!! ⋆˙⟡</Text>
         <Text style={styles.text}>{message}</Text>
 
         <MyNumberInput value={guess} onChange={setGuess}></MyNumberInput>
@@ -63,6 +63,7 @@ export default function GuesserScreen() {
             <Text style={styles.buttonText}>Play again!!</Text>
           </Pressable>
         </View>
+        <Text style={styles.text}>⊹₊˚‧︵‿₊୨ᰔ୧₊‿︵‧˚₊⊹</Text>
       </View>
     </TouchableWithoutFeedback>
   );
@@ -86,7 +87,7 @@ const styles = StyleSheet.create({
   text: {
     color: "black",
     fontSize: 15,
-    textAlign: "center",
+    textAlign: "center"
   },
 
   input: {
