@@ -6,6 +6,7 @@ import {
   StyleSheet,
   TouchableWithoutFeedback,
   Keyboard,
+  FlatList,
 } from "react-native";
 import { useState } from "react";
 
@@ -13,15 +14,23 @@ const Calc = () => {
   const [number1, setNumber1] = useState("");
   const [number2, setNumber2] = useState("");
   const [result, setResult] = useState(0);
+  const [history, setHistory] = useState<string[]>([]);
 
   const addNumbers = () => {
     const sum = Number(number1) + Number(number2);
+
     setResult(sum);
+
+    setHistory([...history,
+       `${number1} + ${number2} = ${result}`]);
   };
 
   const subtractNumbers = () => {
     const difference = Number(number1) - Number(number2);
     setResult(difference);
+
+    setHistory([...history,
+       `${number1} - ${number2} = ${result}`]);
   };
 
   return (
@@ -57,6 +66,7 @@ const Calc = () => {
         </View>
 
         <Text style={styles.result}>Result: {result}</Text>
+        <Text style={styles.title}>History</Text>
       </View>
     </TouchableWithoutFeedback>
   );
@@ -109,6 +119,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 10,
   },
+  historyItem: {
+
+  },
 });
+
 
 export default Calc;
