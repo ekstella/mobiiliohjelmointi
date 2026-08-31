@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import {
   Keyboard,
+  Pressable,
   StyleSheet,
   Text,
   TextInput,
@@ -10,6 +11,9 @@ import {
 
 export default function GuesserScreen() {
   const [guess, setGuess] = useState(0);
+  const [guesses, setGuesses] = useState<number[]>([]);
+  const [correct, setCorrect] = useState(0);
+  const [message, setMessage] = useState("");
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -21,6 +25,13 @@ export default function GuesserScreen() {
           placeholderTextColor="black"
           keyboardType="numeric"
         ></TextInput>
+
+        <View style={styles.buttonRow}>
+          <Pressable style={styles.button} onPress={}>
+            <Text style={styles.buttonText}>Make guess!</Text>
+          </Pressable>
+        </View>
+
       </View>
     </TouchableWithoutFeedback>
   );
