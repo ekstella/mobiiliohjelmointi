@@ -15,6 +15,26 @@ export default function GuesserScreen() {
   const [correct, setCorrect] = useState(0);
   const [message, setMessage] = useState("");
 
+  useEffect(() => restart(), []);
+
+  function guessNumber() {
+    if (Number.isNaN(guess)) {
+      setMessage("This is not a valid number :(");
+      return;
+    }
+
+    setGuesses([...guesses, guess]);
+    if (guess === correct) {
+      setMessage(`Yay, you guessed it!! ^^ The number was ${correct} and it took you ${guesses.length + 1} guesses! :D`);
+    }
+    if (guess < correct) {
+      setMessage(`Your guess of ${guess} is too low :( try again!`);
+    }
+    if (guess > correct) {
+      setMessage(`Your guess of ${guess} is too high :( try again!`);
+    }
+  }
+
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.container}>
@@ -31,7 +51,6 @@ export default function GuesserScreen() {
             <Text style={styles.buttonText}>Make guess!</Text>
           </Pressable>
         </View>
-
       </View>
     </TouchableWithoutFeedback>
   );
