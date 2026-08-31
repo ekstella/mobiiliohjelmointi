@@ -35,10 +35,17 @@ export default function GuesserScreen() {
     }
   }
 
+  function restart() {
+    setCorrect(Math.floor(Math.random() * 100) + 1);
+    setGuess(0);
+    setGuesses([]);
+    setMessage("💗 Guess a number between 1 and 100 💗");
+  }
+
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.container}>
-        <Text style={styles.title}>💗 Guess a number between 1 and 100 💗</Text>
+        <Text style={styles.title}>💗 Guessing game!!! 💗</Text>
         <TextInput
           style={styles.input}
           placeholder="Make a guess :)"
@@ -47,8 +54,8 @@ export default function GuesserScreen() {
         ></TextInput>
 
         <View style={styles.buttonRow}>
-          <Pressable style={styles.button} onPress={}>
-            <Text style={styles.buttonText}>Make guess!</Text>
+          <Pressable style={styles.button} onPress={guessNumber}>
+            <Text style={styles.buttonText}>Press here to guess</Text>
           </Pressable>
         </View>
       </View>
