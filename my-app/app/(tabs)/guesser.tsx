@@ -4,7 +4,6 @@ import {
   Pressable,
   StyleSheet,
   Text,
-  TextInput,
   TouchableWithoutFeedback,
   View,
 } from "react-native";
@@ -57,7 +56,7 @@ export default function GuesserScreen() {
 
         <View style={styles.buttonRow}>
           <Pressable style={styles.button} onPress={guessNumber}>
-            <Text style={styles.buttonText}>Make a guess</Text>
+            <Text style={styles.buttonText}>Make a guess!!</Text>
           </Pressable>
           <Pressable style={styles.button} onPress={restart}>
             <Text style={styles.buttonText}>Play again!!</Text>
@@ -87,7 +86,8 @@ const styles = StyleSheet.create({
   text: {
     color: "black",
     fontSize: 15,
-    textAlign: "center"
+    textAlign: "center",
+    marginHorizontal: 20,
   },
 
   input: {
