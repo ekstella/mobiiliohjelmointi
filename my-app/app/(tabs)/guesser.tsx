@@ -8,6 +8,7 @@ import {
   TouchableWithoutFeedback,
   View,
 } from "react-native";
+import MyNumberInput from "@/components/my-number-input";
 
 export default function GuesserScreen() {
   const [guess, setGuess] = useState(0);
@@ -25,7 +26,11 @@ export default function GuesserScreen() {
 
     setGuesses([...guesses, guess]);
     if (guess === correct) {
-      setMessage(`Yay, you guessed it!! ^^ The number was ${correct} and it took you ${guesses.length + 1} guesses! :D`);
+      setMessage(
+        `Yay, you guessed it!! ^^ The number was ${correct} and it took you ${
+          guesses.length + 1
+        } guesses! :D`
+      );
     }
     if (guess < correct) {
       setMessage(`Your guess of ${guess} is too low :( try again!`);
@@ -46,14 +51,11 @@ export default function GuesserScreen() {
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.container}>
         <Text style={styles.title}>💗 Guessing game!!! 💗</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Make a guess :)"
-          placeholderTextColor="black"
-          keyboardType="numeric"
-        ></TextInput>
+
+        <MyNumberInput value={guess} onChange={setGuess}></MyNumberInput>
 
         <View style={styles.buttonRow}>
+          
           <Pressable style={styles.button} onPress={guessNumber}>
             <Text style={styles.buttonText}>Press here to guess</Text>
           </Pressable>
