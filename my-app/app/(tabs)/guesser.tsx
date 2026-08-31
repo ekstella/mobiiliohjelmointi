@@ -55,9 +55,12 @@ export default function GuesserScreen() {
         <MyNumberInput value={guess} onChange={setGuess}></MyNumberInput>
 
         <View style={styles.buttonRow}>
-          
+
           <Pressable style={styles.button} onPress={guessNumber}>
             <Text style={styles.buttonText}>Press here to guess</Text>
+          </Pressable>
+          <Pressable style={styles.button} onPress={restart}>
+            <Text style={styles.buttonText}>Play again!!</Text>
           </Pressable>
         </View>
       </View>
@@ -98,8 +101,8 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: "lightyellow",
-    paddingVertical: 5,
-    paddingHorizontal: 20,
+    paddingVertical: 2,
+    paddingHorizontal: 10,
     borderRadius: 12,
   },
   buttonText: {
