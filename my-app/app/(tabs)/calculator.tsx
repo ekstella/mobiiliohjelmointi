@@ -19,7 +19,7 @@ const Calc = () => {
   const addNumbers = () => {
     const sum = Number(number1) + Number(number2);
 
-    setResult(sum);
+    setResult(result);
 
     setHistory([...history,
        `${number1} + ${number2} = ${result}`]);
@@ -67,6 +67,13 @@ const Calc = () => {
 
         <Text style={styles.result}>Result: {result}</Text>
         <Text style={styles.title}>History</Text>
+        <FlatList
+        data={history}
+        renderItem={({ item }) => (
+          <Text style={styles.historyItem}>{item}</Text>
+        )}
+        keyExtractor={(item, index) => index.toString()}
+        ></FlatList>
       </View>
     </TouchableWithoutFeedback>
   );
@@ -120,7 +127,8 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   historyItem: {
-
+    fontSize: 15,
+    padding: 3,
   },
 });
 
