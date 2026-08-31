@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { TextInput } from "react-native";
+import styles from "./styles";
 
 type Props = {
   value: number;
@@ -27,6 +28,10 @@ export default function MyNumberInput({ value, onChange }: Props) {
       value={text}
       inputMode="numeric"
       onChangeText={setText}
+      style={[
+        styles.input,
+        error ? styles.errorInput : {}
+      ]}
     />
   );
 }
