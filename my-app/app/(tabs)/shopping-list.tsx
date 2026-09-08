@@ -16,9 +16,13 @@ export default function Shoppinglist() {
 
   const addButton = () => {
     setItems([...items, item]);
+    setItem("")
   };
 
-  const clearButton = () => {};
+  const clearButton = () => {
+    setItem("")
+    setItems([])
+  };
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
