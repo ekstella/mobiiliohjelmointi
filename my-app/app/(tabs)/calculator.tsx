@@ -68,7 +68,6 @@ const Calc = () => {
         <Text style={styles.title}>History</Text>
 
         <FlatList
-          style={styles.historyList}
           data={history}
           renderItem={({ item }) => (
             <Text style={styles.historyItem}>{item}</Text>
@@ -126,15 +125,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     gap: 10,
+    paddingTop: 200,
   },
   historyItem: {
     fontSize: 15,
     padding: 3,
   },
-  historyList: {
-    width: "100%",
-    flex: 1,
-  }
 });
 
 export default Calc;
