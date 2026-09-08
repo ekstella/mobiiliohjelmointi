@@ -52,7 +52,7 @@ export default function Shoppinglist() {
           renderItem={({ item }) => (
             <Text style={styles.historyItem}>{item}</Text>
           )}
-          ListEmptyComponent={() => <Text>No items yet</Text>}
+          ListEmptyComponent={() => <Text style={{ fontStyle: "italic"}}>No items yet</Text>}
         ></FlatList>
       </View>
     </TouchableWithoutFeedback>
