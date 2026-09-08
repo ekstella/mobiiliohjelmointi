@@ -17,20 +17,18 @@ const Calc = () => {
   const [history, setHistory] = useState<string[]>([]);
 
   const addNumbers = () => {
-    const sum = Number(number1) + Number(number2);
+    const result = Number(number1) + Number(number2);
 
     setResult(result);
 
-    setHistory([...history,
-       `${number1} + ${number2} = ${result}`]);
+    setHistory([...history, `${number1} + ${number2} = ${result}`]);
   };
 
   const subtractNumbers = () => {
-    const difference = Number(number1) - Number(number2);
-    setResult(difference);
+    const result = Number(number1) - Number(number2);
+    setResult(result);
 
-    setHistory([...history,
-       `${number1} - ${number2} = ${result}`]);
+    setHistory([...history, `${number1} - ${number2} = ${result}`]);
   };
 
   return (
@@ -66,13 +64,16 @@ const Calc = () => {
         </View>
 
         <Text style={styles.result}>Result: {result}</Text>
+
         <Text style={styles.title}>History</Text>
+
         <FlatList
-        data={history}
-        renderItem={({ item }) => (
-          <Text style={styles.historyItem}>{item}</Text>
-        )}
-        keyExtractor={(item, index) => index.toString()}
+          style={styles.historyList}
+          data={history}
+          renderItem={({ item }) => (
+            <Text style={styles.historyItem}>{item}</Text>
+          )}
+          keyExtractor={(item, index) => index.toString()}
         ></FlatList>
       </View>
     </TouchableWithoutFeedback>
@@ -130,7 +131,10 @@ const styles = StyleSheet.create({
     fontSize: 15,
     padding: 3,
   },
+  historyList: {
+    width: "100%",
+    flex: 1,
+  }
 });
-
 
 export default Calc;
