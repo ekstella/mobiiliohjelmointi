@@ -16,12 +16,9 @@ export default function Shoppinglist() {
 
   const addButton = () => {
     setItems([...items, item]);
-  
-  }
+  };
 
-  const clearButton = () => {
-
-  }
+  const clearButton = () => {};
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -51,6 +48,7 @@ export default function Shoppinglist() {
           renderItem={({ item }) => (
             <Text style={styles.historyItem}>{item}</Text>
           )}
+          ListEmptyComponent={() => <Text>No items yet</Text>}
         ></FlatList>
       </View>
     </TouchableWithoutFeedback>
