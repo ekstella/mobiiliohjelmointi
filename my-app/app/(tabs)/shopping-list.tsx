@@ -14,6 +14,14 @@ export default function Shoppinglist() {
   const [item, setItem] = useState("");
   const [history, setHistory] = useState<string[]>([]);
 
+  const addButton = () => {
+
+  }
+
+  const clearButton = () => {
+
+  }
+
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.container}>
@@ -27,10 +35,10 @@ export default function Shoppinglist() {
         ></TextInput>
 
         <View style={styles.buttonRow}>
-          <Pressable style={styles.button} onPress={setItem}>
+          <Pressable style={styles.button} onPress={addButton}>
             <Text style={styles.buttonText}>Add</Text>
           </Pressable>
-          <Pressable style={styles.button} onPress={setItem}>
+          <Pressable style={styles.button} onPress={clearButton}>
             <Text style={styles.buttonText}>Reset</Text>
           </Pressable>
         </View>
