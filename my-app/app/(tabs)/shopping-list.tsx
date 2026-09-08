@@ -16,12 +16,12 @@ export default function Shoppinglist() {
 
   const addButton = () => {
     setItems([...items, item]);
-    setItem("")
+    setItem("");
   };
 
   const clearButton = () => {
-    setItem("")
-    setItems([])
+    setItem("");
+    setItems([]);
   };
 
   return (
