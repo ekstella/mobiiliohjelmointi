@@ -55,5 +55,6 @@ export default StyleSheet.create({
   historyItem: {
     fontSize: 15,
     padding: 3,
+    textAlign: "center",
   },
 });

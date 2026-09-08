@@ -12,10 +12,11 @@ import { useState } from "react";
 
 export default function Shoppinglist() {
   const [item, setItem] = useState("");
-  const [history, setHistory] = useState<string[]>([]);
+  const [items, setItems] = useState<string[]>([]);
 
   const addButton = () => {
-
+    setItems([...items, item]);
+  
   }
 
   const clearButton = () => {
@@ -43,8 +44,10 @@ export default function Shoppinglist() {
           </Pressable>
         </View>
 
+        <Text style={styles.text}>⊹₊˚‧︵‿₊୨ᰔ୧₊‿︵‧˚₊⊹</Text>
+
         <FlatList
-          data={history}
+          data={items}
           renderItem={({ item }) => (
             <Text style={styles.historyItem}>{item}</Text>
           )}
