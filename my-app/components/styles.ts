@@ -15,7 +15,9 @@ export default StyleSheet.create({
     fontWeight: "bold",
   },
 
-  text: {},
+  text: {
+
+  },
 
   errorInput: {
     borderColor: "red",
@@ -48,5 +50,9 @@ export default StyleSheet.create({
     textAlign: "center",
     marginTop: 10,
     marginBottom: 10,
+  },
+  historyItem: {
+    fontSize: 15,
+    padding: 3,
   },
 });

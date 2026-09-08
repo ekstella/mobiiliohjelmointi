@@ -1,0 +1,50 @@
+import {
+  Keyboard,
+  Pressable,
+  Text,
+  TextInput,
+  TouchableWithoutFeedback,
+  View,
+  FlatList
+} from "react-native";
+import styles from "@/components/styles";
+import { useState } from "react";
+
+export default function Shoppinglist() {
+  const [item, setItem] = useState("");
+  const [history, setHistory] = useState<string[]>([]);
+
+  
+
+  return (
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <View style={styles.container}>
+        <Text style={styles.title}>Shopping list</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Add an item"
+          placeholderTextColor="black"
+          value={item}
+          onChangeText={setItem}
+        ></TextInput>
+
+        <View style={styles.buttonRow}>
+          <Pressable style={styles.button} onPress={setItem}>
+            <Text style={styles.buttonText}>Add</Text>
+          </Pressable>
+          <Pressable style={styles.button} onPress={setItem}>
+            <Text style={styles.buttonText}>Reset</Text>
+          </Pressable>
+
+            <FlatList
+            data={history}
+            renderItem={({ item }) => (
+                <Text style={styles.historyItem}></Text>
+            )}
+            ></FlatList> 
+
+        </View>
+      </View>
+    </TouchableWithoutFeedback>
+  );
+}
