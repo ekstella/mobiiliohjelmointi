@@ -5,7 +5,7 @@ import {
   TextInput,
   TouchableWithoutFeedback,
   View,
-  FlatList
+  FlatList,
 } from "react-native";
 import styles from "@/components/styles";
 import { useState } from "react";
@@ -13,8 +13,6 @@ import { useState } from "react";
 export default function Shoppinglist() {
   const [item, setItem] = useState("");
   const [history, setHistory] = useState<string[]>([]);
-
-  
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -35,15 +33,14 @@ export default function Shoppinglist() {
           <Pressable style={styles.button} onPress={setItem}>
             <Text style={styles.buttonText}>Reset</Text>
           </Pressable>
-
-            <FlatList
-            data={history}
-            renderItem={({ item }) => (
-                <Text style={styles.historyItem}></Text>
-            )}
-            ></FlatList> 
-
         </View>
+
+        <FlatList
+          data={history}
+          renderItem={({ item }) => (
+            <Text style={styles.historyItem}>{item}</Text>
+          )}
+        ></FlatList>
       </View>
     </TouchableWithoutFeedback>
   );

@@ -8,6 +8,7 @@ export default StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     gap: 10,
+    paddingTop: 200,
   },
 
   title: {
